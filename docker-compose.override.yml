@@ -1,0 +1,3 @@
+services:
+  job-scraper:
+    command: ["python", "cli.py", "--site", "builtin"]
