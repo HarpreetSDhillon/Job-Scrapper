@@ -72,21 +72,22 @@ def scrape_builtin_jobs(keywords):
                     level_element = card.select_one(".fs-xs.text-gray-04")  # Selector for job level
 
                     job = {
-                        "title": title_element.text.strip(),
-                        "company": company_element.text.strip(),
-                        "link": job_link,
-                        "job_description": job_description,
-                        "location": location_element.text.strip() if location_element else "Not Specified",
-                        "salary": salary_element.text.strip() if salary_element else "Not Specified",
-                        "level": level_element.text.strip() if level_element else "Not Specified",
-                        "source": base_url,
-                        "applied_status": "Not Applied",
-                        "applied_date": "",
-                        "follow_up_date": "",
-                        "cold_email_contacts": "",
-                        "tech_to_study": "",
-                        "resume_used": ""
+                        "Title": title_element.text.strip(),
+                        "Company": company_element.text.strip(),
+                        "Link": job_link,
+                        "Job_Description": job_description,
+                        "Location": location_element.text.strip() if location_element else "Not Specified",
+                        "Salary": salary_element.text.strip() if salary_element else "Not Specified",
+                        "Job_Level": level_element.text.strip() if level_element else "Not Specified",
+                        "Source": base_url,
+                        "Applied_Status": "Not Applied",
+                        "Applied_Date": "",
+                        "Follow_Up_Date": "",
+                        "Cold_Email_Contacts": "",
+                        "Tech_To_Study": "",
+                        "Resume_Used": ""
                     }
+                    print(f"Scraped job: {job['Title']} at {job['Company']}")
                     jobs.append(job)
 
                     # Write the job to Excel immediately
