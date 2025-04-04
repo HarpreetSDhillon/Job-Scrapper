@@ -3,8 +3,8 @@ from job_scraper.scraper import scrape_jobs
 from job_scraper.excel_writer import write_to_excel
 from job_scraper.follow_up_checker import check_for_followups
 from job_scraper.config import KEYWORDS
-from job_scraper.builtin_scraper import scrape_builtin_jobs
-from job_scraper.linkedin_scraper import scrape_linkedin_jobs
+from job_scraper.model.scrapers.builtin_scraper import scrape_builtin_jobs
+from job_scraper.model.scrapers.linkedin_scraper import scrape_linkedin_jobs
 
 SCRAPER_MAP = {
     "default": scrape_jobs,
